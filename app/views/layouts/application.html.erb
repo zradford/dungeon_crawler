@@ -13,6 +13,16 @@
 
   <body>
 
+    <div class="top-bar">
+      <div class="title-bar-left">
+        <ul class="menu">
+          <li class="menu-text">Dungeon Crawler</li>
+          <li><%= link_to 'Add New Drops', new_pickup_path %></li>
+          <li><%= link_to 'Add New Monsters', '/' %></li>
+        </ul>
+      </div>
+    </div>
+
     <%= yield %>
 
   </body>
