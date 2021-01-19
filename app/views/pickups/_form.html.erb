@@ -1,0 +1,39 @@
+<%= form_with(model: pickup) do |form| %>
+  <% if pickup.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pickup.errors.count, "error") %> prohibited this pickup from being saved:</h2>
+
+      <ul>
+        <% pickup.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="grid-container">
+    <div class="grid-x grid-margins-x">
+      <div class="cell small-3">
+        <%= form.label :type %>
+        <%= form.select :type, Pickup.accepted_types %>
+      </div>
+    </div>
+
+    <div class="grid-x grid-margins-x">
+      <div class="cell">
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+      </div>
+      <div class="cell">
+        <%= form.label :description %>
+        <%= form.text_area :description %>
+      </div>
+    </div>
+
+
+    <div class="grid-x grid-margins-x">
+      <div class="cell">
+        <%= form.submit class: 'button' %>
+      </div>
+    </div>
+  </div>
+<% end %>

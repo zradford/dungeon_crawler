@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pickupable_id: 1
+  pickupable_type: MyString
+
+two:
+  pickupable_id: 1
+  pickupable_type: MyString

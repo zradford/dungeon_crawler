@@ -1,0 +1,33 @@
+<div class="grid-container">
+  <div class="grid-x grid-margin-x align-center align-middle text-center">
+    <div class="cell medium-6 "><h1>dungeon crawler</h1></div>
+  </div>
+  <div class="grid-x grid-margin-x">
+    <div class="cell">
+      <table>
+        <thead>
+          <tr>
+            <th>Room</th>
+            <th>Type</th>
+            <th>Terrain</th>
+            <th>Size/Shape</th>
+            <th>Monster Types</th>
+            <th>Drops</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% 5.times do |index| %>      
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= Type.random_type %></td>
+              <td>#To Do: add terrain table</td>
+              <td><%= Size.random_size %>/<%= Shape.random_shape %></td>
+              <td>monsters</td>
+              <td>drops, drops, drops</td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

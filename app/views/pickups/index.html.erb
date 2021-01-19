@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @filter ? @filter.pluralize : 'Pickups' %></h1>
+
+<div class="grid-container half">
+  <div class="grid-x grid-padding-x small-up-2 medium-up-4 large-up-6">
+    <div class="cell small-auto">
+      <%= link_to 'Spells', pickups_path(params: {filter: 'Spell'}), class: 'button' %>
+    </div>
+
+    <div class="cell small-auto">
+      <%= link_to 'Specials', pickups_path(params: {filter: 'Special'}), class: 'button' %>
+    </div>
+
+
+    <div class="cell small-auto">
+      <%= link_to 'Skills', pickups_path(params: {filter: 'Skill'}), class: 'button' %>
+    </div>
+
+    <div class="cell small-auto">
+      <%= link_to 'Effects', pickups_path(params: {filter: 'Effect'}), class: 'button' %>
+    </div>
+
+
+    <div class="cell small-auto">
+      <%= link_to 'Terrains', pickups_path(params: {filter: 'Terrain'}), class: 'button' %>
+    </div>
+  </div>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pickups.each do |pickup| %>
+      <tr>
+        <td><%= pickup.type %></td>
+        <td><%= pickup.name %></td>
+        <td><%= pickup.description %></td>
+        <td><%= link_to 'Show', pickup %></td>
+        <td><%= link_to 'Edit', edit_pickup_path(pickup) %></td>
+        <td><%= link_to 'Destroy', pickup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pickup', new_pickup_path %>
