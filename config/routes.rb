@@ -3,15 +3,18 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :home 
   resources :pickups
-  resources :skills, controller: 'pickups'
-  resources :spells, controller: 'pickups'
-  resources :specials, controller: 'pickups'
-  resources :effects, controller: 'pickups'
-  resources :terrains, controller: 'pickups'
-  
-  
+  resources :skills, controller: 'pickups', except: [:index, :update]
+  resources :skills, only: [:index, :update]
 
+  resources :spells, controller: 'pickups', except: [:index]
+  resources :spells, only: [:index]
 
+  resources :specials, controller: 'pickups', except: [:index]
+  resources :specials, only: [:index]
 
+  resources :effects, controller: 'pickups', except: [:index]
+  resources :effects, only: [:index]
 
+  resources :terrains, controller: 'pickups', except: [:index]
+  resources :terrains, only: [:index]
 end
