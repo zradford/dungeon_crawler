@@ -5,7 +5,7 @@ class Shape
   end
 
   def self.all_shapes
-   [ "rectangle", "circular", "domed", "square", "tall with tiers" ]
+    [ "rectangle", "circular", "domed", "square", "tall with tiers" ]
   end
 
 end
