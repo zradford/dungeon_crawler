@@ -1,0 +1,33 @@
+<div class="grid-container half">
+  <div class="grid-x">
+    <div class="cell small-2">
+      <%= link_to 'All', pickups_path, class: 'button' %>
+    </div>
+
+    <div class="cell small-2">
+      <%= link_to 'Spells', spells_path, class: 'button' %>
+    </div>
+
+    <div class="cell small-2">
+      <%= link_to 'Specials', specials_path, class: 'button' %>
+    </div>
+
+
+    <div class="cell small-2">
+      <%= link_to 'Skills', skills_path, class: 'button' %>
+    </div>
+
+    <div class="cell small-2">
+      <%= link_to 'Effects', effects_path, class: 'button' %>
+    </div>
+
+
+    <div class="cell small-2">
+      <%= link_to 'Terrains', terrains_path, class: 'button' %>
+    </div>
+
+    <div class="cell small-2">
+      <%= link_to 'Drops', pickups_path(filter: 'Drops'), class: 'button' %>
+    </div>
+  </div>
+</div>

@@ -6,10 +6,10 @@
           <tr>
             <th>Room</th>
             <th>Type</th>
-            <th>Terrain</th>
+            <th><%= link_to 'Terrain', terrains_path %></th>
             <th>Size/Shape</th>
             <th>Monster Types</th>
-            <th>Drops</th>
+            <th><%= link_to 'Drops', pickups_path %></th>
           </tr>
         </thead>
         <tbody>
@@ -17,10 +17,10 @@
             <tr>
               <td><%= index + 1 %></td>
               <td><%= Type.random_type %></td>
-              <td>#To Do: add terrain table</td>
+              <td><%= @terrains[index].name %></td>
               <td><%= Size.random_size %>/<%= Shape.random_shape %></td>
               <td>monsters</td>
-              <td>drops, drops, drops</td>
+              <td><%= @drops[index].name %></td>
             </tr>
           <% end %>
         </tbody>

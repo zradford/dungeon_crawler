@@ -1,19 +1,16 @@
 class PickupsController < ApplicationController
   before_action :set_pickup, only: [:show, :edit, :update, :destroy]
+  
 
   # GET /pickups
   # GET /pickups.json
   def index
-    @pickups = Pickup.all
+    @pickups = Pickup.all.order('type')
 
     if params[:filter]
       @filter = params[:filter]
-      @pickups = Pickup.where(type: @filter)
+      @pickups = Pickup.drops
     end
-  end
-
-  def terrains
-    @terrains = Pickup.terrains
   end
 
   # GET /pickups/1
@@ -37,7 +34,7 @@ class PickupsController < ApplicationController
 
     respond_to do |format|
       if @pickup.save
-        format.html { redirect_to @pickup, notice: 'Pickup was successfully created.' }
+        format.html { redirect_to pickups_url, notice: 'Pickup was successfully created.' }
         format.json { render :show, status: :created, location: @pickup }
       else
         format.html { render :new }

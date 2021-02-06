@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Effects</h1>
+
+<%= render 'pickups/filter_bar' %>
+
+<%= render 'pickups/table', pickups: @effects %>
+
+<br>
+
+<%= link_to 'New Effects', new_pickup_path %>

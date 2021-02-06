@@ -1,0 +1,12 @@
+
+<p id="notice"><%= notice %></p>
+
+<h1>Skills</h1>
+
+<%= render 'pickups/filter_bar' %>
+
+<%= render 'pickups/table', pickups: @skills %>
+
+<br>
+
+<%= link_to 'New Skill', new_pickup_path %>
