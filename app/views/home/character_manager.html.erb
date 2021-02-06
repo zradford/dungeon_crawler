@@ -1,0 +1,73 @@
+<%= form_for :character do |form| %>
+  <div class="grid-container">
+    <div class="grid-x grid-margins-x">
+      <div class="cell small-8">
+        <%= form.label :name %>
+        <%= form.text_field :name, placeholder: 'Name' %>
+      </div>
+      <div class="cell small-2">
+        <%= form.label :speed %>
+        <%= form.text_field :speed, placeholder: 'Speed' %>
+      </div>
+      <div class="cell small-2">
+        <%= form.label :health %>
+        <%= form.text_field :health, placeholder: 'Health' %>
+      </div>
+    </div>
+
+    <div class="grid-x grid-margins-x">
+      <div class="cell small-2">
+        <%= form.label :strength, "Strength (+melee)" %>
+        <%= form.number_field :strength, in: 0..100 %>
+      </div>
+      <div class="cell small-2">
+        <%= form.label :dexterity, "Dexterity (+range)" %>
+        <%= form.number_field :dexterity, in: 0..100 %>
+      </div>
+      <div class="cell small-2">
+        <%= form.label :stability, "Stability (AC +10)" %>
+        <%= form.number_field :stability, in: 0..100 %>
+      </div>
+      <div class="cell small-2">
+        <%= form.label :intelligence, "Intelligence (+spells)" %>
+        <%= form.number_field :intelligence, in: 0..100 %>
+      </div>
+      <div class="cell small-2">
+        <%= form.label :wisdom, "Strength (DC +10)" %>
+        <%= form.number_field :wisdom, in: 0..100 %>
+      </div>
+      <div class="cell small-2">
+        <%= form.label :charisma, "Strength (+status)" %>
+        <%= form.number_field :charisma, in: 0..100 %>
+      </div>
+    </div>
+
+    <div class="grid-x grid-margins-x ">
+      <div class="cell small-5">
+        <%= form.label :skills %>
+        <%= form.text_area :skills, placeholder: 'Skills' %>
+      </div>
+      <div class="cell small-5">
+        <%= form.label :attacks %>
+        <%= form.text_area :attacks, placeholder: 'Attacks (Spells and Weapons)' %>
+      </div>
+    </div>
+
+    <div class="grid-x grid-margins-x ">
+      <div class="cell small-5">
+        <%= form.label :armor %>
+        <%= form.text_area :armor, placeholder: 'Armor' %>
+      </div>
+      <div class="cell small-5">
+        <%= form.label :items %>
+        <%= form.text_area :items, placeholder: 'Items' %>
+      </div>
+    </div>
+
+    <div class="grid-x grid-margins-x">
+      <div class="cell">
+        <%= form.submit "Save", class: 'button' %>
+      </div>
+    </div>
+  </div>
+<% end %>

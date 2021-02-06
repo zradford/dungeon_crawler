@@ -17,4 +17,7 @@ Rails.application.routes.draw do
 
   resources :terrains, controller: 'pickups', except: [:index]
   resources :terrains, only: [:index]
+
+  get "/character_manager" => 'home#character_manager'
+  post "/character_manager" => 'home#character_manager'
 end

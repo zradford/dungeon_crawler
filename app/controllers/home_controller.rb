@@ -5,4 +5,8 @@ class HomeController < ApplicationController
     @terrains = Terrain.randomize(5)
   end
 
+  def character_manager
+    puts params if request.post?
+  end
+
 end
