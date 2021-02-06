@@ -9,12 +9,8 @@ class PickupsController < ApplicationController
 
     if params[:filter]
       @filter = params[:filter]
-      @pickups = Pickup.where(type: @filter)
+      @pickups = Pickup.drops
     end
-  end
-
-  def terrains
-    @pickups = Terrain.all
   end
 
   # GET /pickups/1
