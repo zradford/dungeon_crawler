@@ -1,30 +1,25 @@
-<div class="grid-container">
-  <div class="grid-x grid-margin-x">
-    <div class="cell">
-      <table>
-        <thead>
-          <tr>
-            <th>Room</th>
-            <th>Type</th>
-            <th><%= link_to 'Terrain', terrains_path %></th>
-            <th>Size/Shape</th>
-            <th>Monster Types</th>
-            <th><%= link_to 'Drops', pickups_path %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% 5.times do |index| %>      
-            <tr>
-              <td><%= index + 1 %></td>
-              <td><%= Type.random_type %></td>
-              <td><%= @terrains[index].name %></td>
-              <td><%= Size.random_size %>/<%= Shape.random_shape %></td>
-              <td>monsters</td>
-              <td><%= @drops[index].name %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Room</th>
+      <th>Type</th>
+      <th><%= link_to 'Terrain', terrains_path %></th>
+      <th>Size/Shape</th>
+      <th>Monster Types</th>
+      <th><%= link_to 'Drops', pickups_path %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% 5.times do |index| %>      
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= Type.random_type %></td>
+        <td>terrain</td>
+        <td><%= Size.random_size %>/<%= Shape.random_shape %></td>
+        <td>monsters</td>
+        <td>drop</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
