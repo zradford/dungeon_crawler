@@ -1,0 +1,76 @@
+<%= form_with(model: creature.becomes(Creature)) do |form| %>
+  <% if creature.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(creature.errors.count, "error") %> prohibited this creature from being saved:</h2>
+
+      <ul>
+        <% creature.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="grid-container">
+    <div class="grid-x grid-margins-x">
+      <div class="cell small-3">
+        <%= form.label :type %>
+        <%= form.select :type, Creature.accepted_types %>
+      </div>
+      <div class="cell small-3">
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+      </div>
+    </div>
+
+    <div class="grid-x grid-margins-x">
+      <div class="cell small-2">
+        <%= form.label :max_health %>
+        <%= form.number_field :max_health, in: 1...500, step: 1 %>
+      </div>
+
+      <div class="cell small-2">
+        <%= form.label :speed %>
+        <%= form.number_field :speed, in: 1...500, step: 1 %>
+      </div>
+
+      <div class="cell small-2">
+        <%= form.label :strength %>
+        <%= form.number_field :strength, in: 1...200, step: 1 %>
+      </div>
+
+      <div class="cell small-2">
+        <%= form.label :dexterity %>
+        <%= form.number_field :dexterity, in: 1...200, step: 1 %>
+      </div>
+
+      <div class="cell small-2">
+        <%= form.label :stability %>
+        <%= form.number_field :stability, in: 1...200, step: 1 %>
+      </div>
+
+      <div class="cell small-2">
+        <%= form.label :intelligence %>
+        <%= form.number_field :intelligence, in: 1...200, step: 1 %>
+      </div>
+
+      <div class="cell small-2">
+        <%= form.label :wisdom %>
+        <%= form.number_field :wisdom, in: 1...200, step: 1 %>
+      </div>
+
+      <div class="cell small-2">
+        <%= form.label :charisma %>
+        <%= form.number_field :charisma, in: 1...200, step: 1 %>
+      </div>
+    </div>
+
+
+
+    <div class="grid-x grid-margins-x">
+      <div class="cell">
+        <%= form.submit "Create", class: 'button' %>
+      </div>
+    </div>
+  </div>
+<% end %>
