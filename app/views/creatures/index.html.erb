@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Monsters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th> name </th>
+      <th> speed </th>
+      <th> max_health </th>
+      <th> strength </th>
+      <th> dexterity </th>
+      <th> stability </th>
+      <th> intelligence </th>
+      <th> wisdom </th>
+      <th> charisma </th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @creatures.each do |creature| %>
+      <tr>
+        <td><%= creature.name %></td>
+        <td><%= creature.speed %></td>
+        <td><%= creature.max_health %></td>
+        <td><%= creature.strength %></td>
+        <td><%= creature.dexterity %></td>
+        <td><%= creature.stability %></td>
+        <td><%= creature.intelligence %></td>
+        <td><%= creature.wisdom %></td>
+        <td><%= creature.charisma %></td>
+        <td><%= link_to 'Show', creature %></td>
+        <td><%= link_to 'Edit', edit_creature_path(creature) %></td>
+        <td><%= link_to 'Destroy', creature, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Creature', new_creature_path %>
