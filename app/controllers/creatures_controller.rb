@@ -1,5 +1,6 @@
 class CreaturesController < ApplicationController
   before_action :set_creature, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /creatures
   # GET /creatures.json
@@ -14,7 +15,7 @@ class CreaturesController < ApplicationController
 
   # GET /creatures/new
   def new
-    @creature = Creature.new
+    @creature = Creature.new if user_signed_in?
   end
 
   # GET /creatures/1/edit
