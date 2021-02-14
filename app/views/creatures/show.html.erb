@@ -1,46 +1,40 @@
 <p id="notice"><%= notice %></p>
 
+  <div class="cell small-3">
+    name: <%= @creature.name %>
+  </div>
 
+  <div class="cell small-2">
+    max_health: <%= @creature.max_health %>
+  </div>
 
-      <div class="cell small-2">
-        created by: <%= User.find(@creature.user_id).email %>
-      </div>
+  <div class="cell small-2">
+    speed: <%= @creature.speed %>
+  </div>
 
-      <div class="cell small-3">
-        name: <%= @creature.name %>
-      </div>
+  <div class="cell small-2">
+    strength: <%= @creature.strength %>
+  </div>
 
-      <div class="cell small-2">
-        max_health: <%= @creature.max_health %>
-      </div>
+  <div class="cell small-2">
+    dexterity: <%= @creature.dexterity %>
+  </div>
 
-      <div class="cell small-2">
-        speed: <%= @creature.speed %>
-      </div>
+  <div class="cell small-2">
+    stability: <%= @creature.stability %>
+  </div>
 
-      <div class="cell small-2">
-        strength: <%= @creature.strength %>
-      </div>
+  <div class="cell small-2">
+    intelligence: <%= @creature.intelligence %>
+  </div>
 
-      <div class="cell small-2">
-        dexterity: <%= @creature.dexterity %>
-      </div>
+  <div class="cell small-2">
+    wisdom: <%= @creature.wisdom %>
+  </div>
 
-      <div class="cell small-2">
-        stability: <%= @creature.stability %>
-      </div>
-
-      <div class="cell small-2">
-        intelligence: <%= @creature.intelligence %>
-      </div>
-
-      <div class="cell small-2">
-        wisdom: <%= @creature.wisdom %>
-      </div>
-
-      <div class="cell small-2">
-        charisma: <%= @creature.charisma %>
-      </div>
+  <div class="cell small-2">
+    charisma: <%= @creature.charisma %>
+  </div>
 
 <%= link_to 'Edit', edit_creature_path(@creature) %> |
 <%= link_to 'Back', creatures_path %>
