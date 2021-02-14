@@ -15,7 +15,7 @@ class CreaturesController < ApplicationController
 
   # GET /creatures/new
   def new
-    @creature = Creature.new if user_signed_in?
+    @creature = current_user.creatures.build
   end
 
   # GET /creatures/1/edit
@@ -25,7 +25,7 @@ class CreaturesController < ApplicationController
   # POST /creatures
   # POST /creatures.json
   def create
-    @creature = Creature.new(creature_params)
+    @creature = current_user.creatures.build(creature_params)
 
     respond_to do |format|
       if @creature.save
@@ -70,6 +70,6 @@ class CreaturesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def creature_params
-      params.require(:creature).permit(:type, :name, :max_health, :speed, :strength, :dexterity, :stability, :intelligence, :wisdom, :charisma)
+      params.require(:creature).permit(:user_id, :type, :name, :max_health, :speed, :strength, :dexterity, :stability, :intelligence, :wisdom, :charisma)
     end
 end

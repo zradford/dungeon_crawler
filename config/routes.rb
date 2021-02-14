@@ -1,22 +1,24 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :creatures
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'home#index'
+  devise_for :users
   resources :home 
+  resources :creatures
+  resources :monsters, controller: 'creatures', except: :index
+  resources :monsters, only: :index
+
   resources :pickups
-  resources :skills, controller: 'pickups', except: [:index, :update]
-  resources :skills, only: [:index, :update]
+  resources :skills, controller: 'pickups', except: :index
+  resources :skills, only: :index
 
-  resources :spells, controller: 'pickups', except: [:index]
-  resources :spells, only: [:index]
+  resources :spells, controller: 'pickups', except: :index
+  resources :spells, only: :index
 
-  resources :specials, controller: 'pickups', except: [:index]
-  resources :specials, only: [:index]
+  resources :specials, controller: 'pickups', except: :index
+  resources :specials, only: :index
 
-  resources :effects, controller: 'pickups', except: [:index]
-  resources :effects, only: [:index]
+  resources :effects, controller: 'pickups', except: :index
+  resources :effects, only: :index
 
-  resources :terrains, controller: 'pickups', except: [:index]
-  resources :terrains, only: [:index]
+  resources :terrains, controller: 'pickups', except: :index
+  resources :terrains, only: :index
 end
