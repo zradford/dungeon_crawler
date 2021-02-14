@@ -11,6 +11,9 @@
     </div>
   <% end %>
 
+
+  <%= form.hidden_field :user_id, value: current_user.id %>
+
   <div class="grid-container">
     <div class="grid-x grid-margins-x">
       <div class="cell small-3">

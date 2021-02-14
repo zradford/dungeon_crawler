@@ -17,12 +17,12 @@
       <div class="title-bar-left">
         <ul class="menu">
           <li><%= link_to 'Dungeon Crawler', root_url %></li>
-          <li><%= link_to 'Character Manager', '/character_manager' %></li>
-          <li><%= link_to 'All Monsters', creatures_path %></li>
+          <li><%= link_to 'All Monsters', monsters_path %></li>
         </ul>
       </div>
     </div>
-
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
 
   </body>
