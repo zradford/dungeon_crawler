@@ -18,7 +18,7 @@
     <div class="grid-x grid-margins-x">
       <div class="cell small-3">
         <%= form.label :type %>
-        <%= form.select :type, Creature.accepted_types %>
+        <%= form.select :type, Creature.accepted_types, selected: @type %>
       </div>
       <div class="cell small-3">
         <%= form.label :name %>
@@ -67,8 +67,6 @@
         <%= form.number_field :charisma, in: 1...200, step: 1 %>
       </div>
     </div>
-
-
 
     <div class="grid-x grid-margins-x">
       <div class="cell">

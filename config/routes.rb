@@ -2,9 +2,13 @@ Rails.application.routes.draw do
   root 'home#index'
   devise_for :users
   resources :home 
+  
   resources :creatures
   resources :monsters, controller: 'creatures', except: :index
   resources :monsters, only: :index
+
+  resources :characters, controller: 'creatures', except: :index
+  resources :characters, only: :index
 
   resources :pickups
   resources :skills, controller: 'pickups', except: :index

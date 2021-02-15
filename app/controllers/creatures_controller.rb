@@ -5,7 +5,7 @@ class CreaturesController < ApplicationController
   # GET /creatures
   # GET /creatures.json
   def index
-    @creatures = Creature.all
+    @creatures = Monster.all
   end
 
   # GET /creatures/1
@@ -16,6 +16,7 @@ class CreaturesController < ApplicationController
   # GET /creatures/new
   def new
     @creature = current_user.creatures.build
+    @type = params[:type]
   end
 
   # GET /creatures/1/edit
