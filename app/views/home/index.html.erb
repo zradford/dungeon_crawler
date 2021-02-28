@@ -11,15 +11,23 @@
     </tr>
   </thead>
   <tbody>
-    <% 5.times do |index| %>      
+    <% 5.times do |index| %>  
+      <% t = index * 3%>    
       <tr>
         <td><%= index + 1 %></td>
         <td><%= Type.random_type %></td>
-        <td>terrain</td>
+        <td><%= @terrains[index].name %></td>
         <td><%= Size.random_size %>/<%= Shape.random_shape %></td>
-        <td>monsters</td>
-        <td>drop</td>
+        <td><%= link_to @monsters[index].name, monster_path(@monsters[index]) %></td>
+        <td>
+          <% @drops[index].each do |d| %>
+            <%= link_to d.name, pickup_path(d) %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+
+<div id="explain_area"></div>

@@ -16,6 +16,10 @@ class PickupsController < ApplicationController
   # GET /pickups/1
   # GET /pickups/1.json
   def show
+    respond_to do |format|
+      format.html {}
+      format.js { render 'pickup' }
+    end
   end
 
   # GET /pickups/new

@@ -4,7 +4,8 @@ class HomeController < ApplicationController
   # GET /home.json
   def index
     @terrains = Terrain.randomize(5)
-    @drops = Pickup.drops.randomize(15)
+    @drops = Pickup.randomize_drops(5)
+    @monsters = Creature.randomize_monsters(5)
   end
 
   def character_manager
