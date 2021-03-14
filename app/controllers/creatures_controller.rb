@@ -11,6 +11,10 @@ class CreaturesController < ApplicationController
   # GET /creatures/1
   # GET /creatures/1.json
   def show
+    respond_to do |format|
+      format.html {}
+      format.js { render 'display_creature' }
+    end
   end
 
   # GET /creatures/new

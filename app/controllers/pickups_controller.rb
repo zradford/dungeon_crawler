@@ -18,7 +18,7 @@ class PickupsController < ApplicationController
   def show
     respond_to do |format|
       format.html {}
-      format.js { render 'pickup' }
+      format.js { render 'display_pickup' }
     end
   end
 

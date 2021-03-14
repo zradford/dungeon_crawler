@@ -18,10 +18,10 @@
         <td><%= Type.random_type %></td>
         <td><%= @terrains[index].name %></td>
         <td><%= Size.random_size %>/<%= Shape.random_shape %></td>
-        <td><%= link_to @monsters[index].name, monster_path(@monsters[index]) %></td>
+        <td><%= link_to @monsters[index].name, monster_path(@monsters[index]), remote: true %></td>
         <td>
           <% @drops[index].each do |d| %>
-            <%= link_to d.name, pickup_path(d) %>
+            <%= link_to d.name, pickup_path(d), remote: true %>
           <% end %>
         </td>
       </tr>
@@ -30,4 +30,4 @@
 </table>
 
 
-<div id="explain_area"></div>
+<span id="explain_area"></span>
